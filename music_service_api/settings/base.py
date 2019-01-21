@@ -22,13 +22,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
 # Application definition
+VENDOR_APPS = [
+    'rest_framework'
+]
+
+USER_APPS = [
+    'music'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+INSTALLED_APPS += VENDOR_APPS
+INSTALLED_APPS += USER_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
