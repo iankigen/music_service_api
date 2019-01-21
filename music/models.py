@@ -9,4 +9,4 @@ class Songs(models.Model):
     artist = models.CharField(max_length=255, null=False)
 
     def __str__(self):
-        return '<Songs: {} - {}'.format(self.title, self.artist)
+        return 'Song: {} - {}'.format(self.title, self.artist)
