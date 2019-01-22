@@ -26,7 +26,7 @@ class BaseViewTestCase(APITestCase):
 
 class GetAllSongsTestCase(BaseViewTestCase):
     def test_get_all_songs(self):
-        response = self.client.get(reverse('songs-all', kwargs={"version": "v1"}))
+        response = self.client.get(reverse('songs-list', kwargs={"version": "v1"}))
 
         expected = Songs.objects.all()
         serialised = SongsSerializer(expected, many=True)
