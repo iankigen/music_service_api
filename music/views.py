@@ -2,5 +2,11 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .serializers import SongsSerializer, Songs
+
+
+class SongsViewSets(viewsets.ModelViewSet):
+    serializer_class = SongsSerializer
+    queryset = Songs.objects.all()
